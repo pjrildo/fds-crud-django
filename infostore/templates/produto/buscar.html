@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <title>Buscar produtos</title>
+</head>
+<body>
+    <header>
+        {% if produtos_categoria %}
+            <h1>Busca de produtos por categoria</h1>
+        {% else %}
+            <h1>Busca de produtos por fornecedor</h1>
+        {% endif %}
+    </header>
+    <ul>
+        {%if produtos_categoria %}
+            {% for produto in produtos_categoria %}
+                <li>{{ produto.id }}. {{ produto.nome }} - {{ produto.idade }}</li>
+            {% endfor %}
+        {% else %}
+            {% for produto in produtos_fornecedor %}
+                <li>{{ produto.id }}. {{ produto.nome }} - {{ produto.idade }}</li>
+            {% endfor %}
+        {% endif %}
+    </ul>
+</body>
+</html>

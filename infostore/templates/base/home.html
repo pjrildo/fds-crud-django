@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <title>Infostore</title>
+    <meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+</head>
+<body>
+    <nav class="navbar navbar-inverse">
+        <div class="container-fluid">
+            <div class="navbar-header">
+                <a class="navbar-brand" href="#">Infostore - CRUD</a>
+            </div>
+            <ul class="nav navbar-nav">
+                <li class="active"><a href="#">Home</a></li>
+                <li><a href="mailto:junior.alvesp99@gmail.com">Contato</a></li>
+                <li><a href="https://www.github.com/pjrildo" target="_blank">Github</a></li>
+            </ul>
+        </div>
+    </nav>
+    <div class="container-fluid">
+        <div class="col-sm12 text-center">
+            <button onclick="location.href='{% url 'fornecedores_fornecedor_list' %}'" type="button" class="btn btn-primary">Gerenciar fornecedores</button>
+            <button onclick="location.href='{% url 'categorias_categoria_list' %}'" type="button" class="btn btn-primary">Gerenciar categorias</button><br><br>
+            <button onclick="location.href='{% url 'produtos_produto_list' %}'" type="button" class="btn btn-primary">Gerenciar produtos</button>
+        </div>
+    </div>
+</body>
+</html>
