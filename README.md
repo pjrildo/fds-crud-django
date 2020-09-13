@@ -1,0 +1,1 @@
+Meu primeiro CRUD em Python utilizando o framework Django e banco de dados PostgreSQL
