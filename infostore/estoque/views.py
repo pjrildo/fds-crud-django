@@ -15,6 +15,21 @@ def buscar_produtos_fornecedor(request, pk):
     return render(request, 'produto/buscar.html', {'produtos_fornecedor': produtos})
 
 
+def confirma_fornecedor_delete(request, pk):
+    fornecedor = Fornecedor.objects.filter(id=pk).first()
+    return render(request, 'fornecedor/delete.html', {'fornecedor': fornecedor})
+
+
+def confirma_categoria_delete(request, pk):
+    categoria = Categoria.objects.filter(id=pk).first()
+    return render(request, 'categoria/delete.html', {'categoria': categoria})
+
+
+def confirma_produto_delete(request, pk):
+    produto = Produto.objects.filter(id=pk).first()
+    return render(request, 'produto/delete.html', {'produto': produto})
+
+
 class FornecedorListView(ListView):
     model = Fornecedor
     template_name = 'fornecedor/listar.html'
@@ -94,8 +109,6 @@ class ProdutoDeleteView(DeleteView):
     template_name = 'produto/delete.html'
     context_object_name = 'produto'
     success_url = reverse_lazy('produtos_produto_list')
-
-
 
 
 

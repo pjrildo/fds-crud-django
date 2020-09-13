@@ -28,7 +28,7 @@
                         <tbody class='table-striped'>
                             {% for fornecedor in fornecedores %}
                             <tr>
-                                <td>{{ fornecedor.id }} <button onclick="location.href='{% url 'fornecedores_fornecedor_delete' fornecedor.id %}'" class="btn btn-warning" title="Excluir">Excluir</button></td>
+                                <td>{{ fornecedor.id }} <a href="{% url 'fornecedores_confirma_delete' fornecedor.id %}" class="btn btn-warning">Excluir</a></td>
                                 <td><a href="{% url 'fornecedores_fornecedor_update' fornecedor.id %}">{{ fornecedor.nome_fantasia }}</a></td>
                                 <td>{{ fornecedor.email }}</td>
                                 <td>{{ fornecedor.telefone }}</td>
@@ -41,9 +41,9 @@
         </div>
         <div class="container-fluid">
             <div class="col-sm-12 text-center">
-                <button onclick="location.href='{% url 'fornecedores_fornecedor_create' %}'" class="btn btn-primary" title="Abrir">Novo Fornecedor</button><br>
+                <a href="{% url 'fornecedores_fornecedor_create' %}" class="btn btn-primary" title="Abrir">Novo Fornecedor</a><br>
                 <br>
-                <button onclick="location.href='{% url 'infostore_home' %}'" class="btn btn-primary" title="Home">Home</button>
+                <a href="{% url 'infostore_home' %}" class="btn btn-primary" title="Home">Home</a>
             </div>
         </div>
         <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>

@@ -27,9 +27,9 @@
                         <tbody class='table-striped'>
                             {% for categoria in categorias %}
                             <tr>
-                                <td>{{ categoria.id }} <button onclick="location.href='{% url 'categorias_categoria_delete' categoria.id %}'" class="btn btn-warning" title="Excluir">Excluir</button></td>
+                                <td>{{ categoria.id }} <a href="{% url 'categorias_confirma_delete' categoria.id %}" class="btn btn-warning">Excluir</a></td>
                                 <td><a href="{% url 'categorias_categoria_update' categoria.id %}">{{ categoria.nome }}</a></td>
-                                <td><a href="#">Listar produtos</a></td>
+                                <td><a href="{% url 'buscar_produtos_categoria' categoria.id %}">Listar produtos</a></td>
                             </tr>
                             {% endfor %}
                         </tbody>
@@ -39,9 +39,9 @@
         </div>
         <div class="container-fluid">
             <div class="col-sm-12 text-center">
-                <button onclick="location.href='{% url 'categorias_categoria_create' %}'" class="btn btn-primary" title="Abrir">Nova Categoria</button><br>
+                <a href="{% url 'categorias_categoria_create' %}" class="btn btn-primary" title="Abrir">Nova Categoria</a><br>
                 <br>
-                <button onclick="location.href='{% url 'infostore_home' %}'" class="btn btn-primary" title="Home">Home</button>
+                <a href="{% url 'infostore_home' %}" class="btn btn-primary" title="Home">Home</a>
             </div>
         </div>
         <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>

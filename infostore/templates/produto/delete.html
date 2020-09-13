@@ -11,13 +11,13 @@
 <body>
     <div class="text-center">
         <h2>Exclusão de Produto</h2>
-        <form method="post">
+        <form method="post" action="{% url 'produtos_produto_delete' produto.id %}">
             {% csrf_token %}
             <p>Tem certeza que deseja excluir o produto: "{{ produto.nome }}"?</p>
             <div class="form-group">
                 <div class="col-sm-offset-2 col-sm-10">
                     <button type="submit" class="btn btn-default">Confirmar</button>
-                    <button onclick="location.href='{% url 'produtos_produto_list' %}'" class="btn btn-default">Voltar</button>
+                    <a href="{% url 'produtos_produto_list' %}" class="btn btn-default">Voltar</a>
                 </div>
             </div>
         </form>

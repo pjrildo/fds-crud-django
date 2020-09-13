@@ -1,27 +1,65 @@
 <!DOCTYPE html>
 <html lang="pt-br">
-<head>
-    <meta charset="UTF-8">
-    <title>Buscar produtos</title>
-</head>
-<body>
-    <header>
-        {% if produtos_categoria %}
-            <h1>Busca de produtos por categoria</h1>
-        {% else %}
-            <h1>Busca de produtos por fornecedor</h1>
-        {% endif %}
-    </header>
-    <ul>
-        {%if produtos_categoria %}
-            {% for produto in produtos_categoria %}
-                <li>{{ produto.id }}. {{ produto.nome }} - {{ produto.idade }}</li>
-            {% endfor %}
-        {% else %}
-            {% for produto in produtos_fornecedor %}
-                <li>{{ produto.id }}. {{ produto.nome }} - {{ produto.idade }}</li>
-            {% endfor %}
-        {% endif %}
-    </ul>
-</body>
+    <head>
+        <title>Produtos</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta/css/bootstrap.min.css" integrity="sha384-/Y6pD6FV/Vv2HJnA6t+vslU6fwYXjCFtcEpHbNJ0lyAFsXTsjBbfaDjzALeQsN6M" crossorigin="anonymous">
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta/js/bootstrap.min.js" integrity="sha384-h0AbiXch4ZDo7tp9hKZ4TsHbi047NrKGLO3SEJAg45jXxnGIfYzk4Si90RDIqNm1" crossorigin="anonymous"></script>
+    </head>
+    <body>
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12">
+                    {% if produtos_categoria %}
+                    <h1>Busca de produtos por categoria</h1>
+                    {% else %}
+                    <h1>Busca de produtos por fornecedor</h1>
+                    {% endif %}
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-12">
+                    <table class="table table-striped">
+                        <thead class="thead-inverse">
+                            <tr>
+                                <th>Código</th>
+                                <th>Nome</th>
+                                <th>Descrição</th>
+                                <th>Preço</th>
+                            </tr>
+                        </thead>
+                        <tbody class='table-striped'>
+                        {%if produtos_categoria %}
+                            {% for produto in produtos_categoria %}
+                            <tr>
+                                <td>{{ produto.id }}</td>
+                                <td>{{ produto.nome }}</td>
+                                <td>{{ produto.descricao }}</td>
+                                <td>R$ {{ produto.preco }}</td>
+                            </tr>
+                            {% endfor %}
+                        {% else %}
+                            {% for produto in produtos_fornecedor %}
+                            <tr>
+                                <td>{{ produto.id }}</td>
+                                <td>{{ produto.nome }}</td>
+                                <td>{{ produto.descricao }}</td>
+                                <td>R$ {{ produto.preco }}</td>
+                            </tr>
+                            {% endfor %}
+                        {% endif %}
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+        <div class="container-fluid">
+            <div class="col-sm-12 text-center">
+                <a href="{% url 'produtos_produto_list' %}" class="btn btn-primary">Voltar</a><br>
+            </div>
+        </div>
+        <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.11.0/umd/popper.min.js" integrity="sha384-b/U6ypiBEHpOf/4+1nzFpr53nxSS+GLCkfwBdFNTxtclqqenISfwAzpKaMNFNmj4" crossorigin="anonymous"></script>
+    </body>
 </html>
