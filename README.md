@@ -1,1 +1,2 @@
-Meu primeiro CRUD em Python utilizando o framework Django e banco de dados PostgreSQL
+My first CRUD using Django framework for Python
+
